@@ -1,0 +1,34 @@
+﻿@using KitabxanaProyekti.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+
+@model  PagedList.IPagedList<Isci_Table>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:15px;">
+    <tr>
+        <th>ID</th>
+        <th>İşçi</th>
+        <th>Güncəllə</th>
+        <th>Sil</th>
+
+    </tr>
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.ID</td>
+            <td>@i.Isci</td>
+            <td><a href="/Isci/IsciGetir/@i.ID" style="background-color:#039418; color:white;" class="btn"><i class="fa fa-pencil"></i> Güncəllə</a></td>
+            <td><a href="/Isci/IsciSil/@i.ID" style="background-color:darkred; color:white;" class="btn"><i class="fa fa-times"></i> Sil</a></td>
+        </tr>
+    }
+</table>
+@Html.PagedListPager((IPagedList)Model, seyfe => Url.Action("Index", new { seyfe }))
+
+<a href="/Isci/IsciElaveEt/" style="background-color:#0654a9; color:white; margin-top:15px;" class="btn">
+    <i class="fa fa-user-plus"></i> Yeni İşçi
+</a>
+

@@ -1,0 +1,13 @@
+﻿@model KitabxanaProyekti.Models.Entity.Isci_Table
+@{
+    ViewBag.Title = "IsciElaveEt";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form method="post" class="form-group" style="margin-top:15px;">
+    @Html.LabelFor(i => i.Isci)
+    @Html.TextBoxFor(i => i.Isci, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.Isci, "", new { @style = "color: blue" })
+    <button class="btn" style="background-color:#045ecc; color:white; margin-top: 15px;"><i class="fa  fa-plus-circle"></i> Əlavə Et</button>
+
+</form>

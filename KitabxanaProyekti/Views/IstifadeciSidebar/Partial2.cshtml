@@ -1,0 +1,136 @@
+﻿@model KitabxanaProyekti.Models.Entity.Istifadeci_Table
+
+
+@using (Html.BeginForm("Index2", "IstifadeciSidebar", FormMethod.Post))
+
+{
+
+    <form class="form-horizontal">
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Ad</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Ad, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Soyad</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Soyad, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">İstifadəçi Adı</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.IstifadeciAdi, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Mail</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Mail, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Şifrə</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Sifre, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Telefon</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Telefon, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Şəkil</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.Foto, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+        <div class="form-group row">
+
+            <label for="inputName" class="col-sm-2 col-form-label">Təhsil Yeri</label>
+
+            <div class="col-sm-10">
+
+                @Html.TextBoxFor(x => x.TehsilYeri, new { @class = "form-control" })
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <div class="offset-sm-2 col-sm-10">
+
+                <div class="checkbox">
+
+                    <label>
+
+                        <input type="checkbox"> Şərtləri Oxudum <a href="#">qəbul edirəm</a>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="form-group row">
+
+            <div class="offset-sm-2 col-sm-10">
+
+                <button type="submit" class="btn btn-danger">Məlumatları Yenilə</button>
+
+            </div>
+
+        </div>
+
+    </form>
+
+}
+

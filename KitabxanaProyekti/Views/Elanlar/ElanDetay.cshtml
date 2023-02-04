@@ -1,0 +1,7 @@
+﻿@model KitabxanaProyekti.Models.Entity.Elan_Table
+@{
+    ViewBag.Title = "ElanDetay";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>@ViewBag.eln</h2>
+@Html.TextAreaFor(x=>x.Mezmun, new { @class = "form-control" })

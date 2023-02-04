@@ -1,0 +1,16 @@
+﻿@model KitabxanaProyekti.Models.Entity.Kategoriya_Table 
+@{
+    ViewBag.Title = "KategoriyaElaveEt";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <br />
+    <label> Kategoriya Ad </label>
+    <input type="text" class="form-control" name="Ad" />
+    @Html.ValidationMessageFor(i => i.Ad, "", new { @style = "color: blue" })
+    <br />
+    <button class="btn" style="background-color:#045ecc; color:white;"><i class="fa  fa-plus-circle"></i> Əlavə Et</button>
+
+</form>
+

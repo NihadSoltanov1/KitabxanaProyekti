@@ -1,0 +1,27 @@
+﻿@model KitabxanaProyekti.Models.Entity.Emeliyyat_Table
+@{
+    ViewBag.Title = "KitabVer";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div style="margin-top:15px;"><label>Kitab</label> </div>
+    @Html.DropDownListFor(x => x.Kitab_Table.ID, (List<SelectListItem>)ViewBag.dyr1, new { @class = "form-control" })
+
+    <div style="margin-top:15px;"><label>İstifadəçi</label> </div>
+    @Html.DropDownListFor(x => x.Istifadeci_Table.ID, (List<SelectListItem>)ViewBag.dyr2, new { @class = "form-control" })
+
+    <div style="margin-top:15px;"><label>İşçi</label> </div>
+    @Html.DropDownListFor(x => x.Isci_Table.ID, (List<SelectListItem>)ViewBag.dyr3, new { @class = "form-control" })
+
+    <div style="margin-top:15px;"><label>Verilmə Tarixi</label> </div>
+    <input type="text" value="@DateTime.Now.ToShortDateString()" name="GoturulmeTarix" class="form-control" />
+
+    <div style="margin-top:15px;"><label>Qaytarma Tarixi</label> </div>
+    <input type="text" value="@DateTime.Now.AddDays(15).ToShortDateString()" name="QaytarmaTarix" class="form-control" />
+
+    <button class="btn btn-group" style="background-color:#920be4; color:white; margin-top:15px;">Kitab Ver</button>
+    <input type="hidden" name="EmeliyyatVeziyyet" value="True" />
+</form>
+
+

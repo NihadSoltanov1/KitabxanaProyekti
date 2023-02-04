@@ -1,0 +1,38 @@
+﻿@using KitabxanaProyekti.Models.Entity
+@model List<Yazici_Table>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<table class="table table-hover" style="margin-top:15px;">
+    <tr style="background-color:#232226; color:white;">
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Haqqında</th>
+        <th>Güncəllə</th>
+        <th>Sil</th>
+        <th>Yazıçının Kitabları</th>
+    </tr>
+    @foreach (var yzr in Model)
+    {
+<tr>
+    <td>@yzr.ID</td>
+    <td>@yzr.Ad</td>
+    <td>@yzr.Soyad</td>
+    <td>@yzr.Aciqlama</td>
+    <td><a href="/Yazici/YaziciGetir/@yzr.ID" style="background-color:#039418; color:white;" class="btn"><i class="fa fa-pencil"></i> Güncəllə</a></td>
+    <td><a href="/Yazici/YaziciSil/@yzr.ID" style="background-color:darkred; color:white;" class="btn"><i class="fa fa-times"></i> Sil</a></td>
+
+    <td><a href="/Yazici/YazicininKitablari/@yzr.ID" style="background-color:#0654a9; color:white;" class="btn"><i class="fa fa-book"></i> Yazıçının Kitabları</a></td>
+
+</tr>
+    }
+</table>
+
+<a href="/Yazici/YaziciElaveEt/" style="background-color:#0654a9; color:white; margin-top:15px;" class="btn">
+    <i class="fa fa-user-plus"></i> Yeni Yazıçı
+</a>
+

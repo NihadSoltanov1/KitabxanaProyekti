@@ -1,0 +1,20 @@
+﻿@model KitabxanaProyekti.Models.Entity.Elan_Table
+@{
+    ViewBag.Title = "YeniElan";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("YeniElan", "Elanlar", FormMethod.Post))
+{
+    <div style="margin-top:15px;"><b>Kategoriya</b></div>
+    @Html.TextBoxFor(x => x.Kategoriya, new { @class = "form-control" })
+    <div style="margin-top:15px;"><b>Məzmun</b></div>
+    @Html.TextAreaFor(x => x.Mezmun, new { @class = "form-control" })
+    <div style="margin-top:15px;"><b>Tarix</b></div>
+    @Html.TextBoxFor(x=>x.Tarix, new { @class = "form-control" })
+    <div style="margin-top:15px;">
+        <button class="btn btn-info">
+            Əlavə Et
+        </button>
+    </div>
+}

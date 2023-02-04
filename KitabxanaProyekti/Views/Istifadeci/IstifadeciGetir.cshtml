@@ -1,0 +1,42 @@
+﻿@model KitabxanaProyekti.Models.Entity.Istifadeci_Table
+@{
+    ViewBag.Title = "IstifadeciGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("IstifadeciGuncelle", "Istifadeci", FormMethod.Post))
+{
+    <div style="margin-top: 15px"> <label>ID</label> </div>
+    @Html.TextBoxFor(i => i.ID, new { @class = "form-control" })
+    <div style="margin-top: 15px"> <label>Ad</label> </div>
+    @Html.TextBoxFor(i => i.Ad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.Ad, "", new { @style = "color: blue" })
+
+    <div style="margin-top: 15px"> <label>Soyad</label> </div>
+    @Html.TextBoxFor(i => i.Soyad, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.Soyad, "", new { @style = "color: blue" })
+
+    <div style="margin-top: 15px"> <label>İstifadəçi Adı</label> </div>
+    @Html.TextBoxFor(i => i.IstifadeciAdi, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.Soyad, "", new { @style = "color: blue" })
+
+    <div style="margin-top: 15px"> <label>Mail</label> </div>
+    @Html.TextBoxFor(i => i.Mail, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.Mail, "", new { @style = "color: blue" })
+
+    <div style="margin-top: 15px"> <label>Şifrə</label> </div>
+    @Html.TextBoxFor(i => i.Sifre, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.Sifre, "", new { @style = "color: blue" })
+
+    <div style="margin-top: 15px"> <label>Telefon</label> </div>
+    @Html.TextBoxFor(i => i.Telefon, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.Telefon, "", new { @style = "color: blue" })
+
+    <div style="margin-top: 15px"> <label>Təhsil Yeri</label> </div>
+    @Html.TextBoxFor(i => i.TehsilYeri, new { @class = "form-control" })
+
+    <div style="margin-top: 15px"> <label>Şəkil</label> </div>
+    @Html.TextBoxFor(i => i.Foto, new { @class = "form-control" })
+
+<button class="btn btn-info" style="margin-top:15px;">Güncəllə</button>
+}

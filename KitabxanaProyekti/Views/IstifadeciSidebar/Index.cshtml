@@ -1,0 +1,334 @@
+﻿@using KitabxanaProyekti.Models.Entity
+@model List<Elan_Table>
+
+@{
+
+    ViewBag.Title = "Index";
+
+    Layout = "~/Views/Shared/_LayoutPanel.cshtml";
+
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>AdminLTE 3 | User Profile</title>
+
+    <!-- Tell the browser to be responsive to screen width -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+
+    <!-- Ionicons -->
+
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <!-- Theme style -->
+
+    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+
+    <!-- Google Font: Source Sans Pro -->
+
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+</head>
+
+<body class="hold-transition sidebar-mini">
+
+    <!-- Navbar -->
+    <!-- Content Wrapper. Contains page content -->
+    <!-- Content Header (Page header) -->
+
+    <section class="content-header">
+
+        <div class="container-fluid">
+
+            <div class="row mb-2">
+
+                <div class="col-sm-6">
+
+                    <h1>Profilim</h1>
+
+                </div>
+
+
+
+            </div>
+
+        </div><!-- /.container-fluid -->
+
+    </section>
+
+
+
+    <!-- Main content -->
+
+    <section class="content">
+
+        <div class="container-fluid">
+
+            <div class="row">
+
+                <div class="col-md-3">
+
+
+
+                    <!-- Profile Image -->
+
+                    <div class="card card-primary card-outline">
+
+                        <div class="card-body box-profile">
+
+                            <div class="text-center">
+
+                                <img class="profile-user-img img-fluid img-circle"
+                                     src="~/AdminLTE-3.0.4/dist/img/2.png"
+                                     alt="User profile picture">
+
+                            </div>
+
+
+
+                            <h3 class="profile-username text-center">@ViewBag.AdSoyad</h3>
+
+
+
+                            <p class="text-muted text-center">Kitabxana Üzvü</p>
+
+
+
+                            <ul class="list-group list-group-unbordered mb-3">
+
+                                <li class="list-group-item">
+
+                                    <b>Oxuduğum Kitablar:</b> <a class="float-right">@ViewBag.dyr3</a>
+
+                                </li>
+
+                                <li class="list-group-item">
+
+                                    <b>Gələn Mesaj:</b> <a class="float-right">@ViewBag.dyr4</a>
+
+                                </li>
+
+                                <li class="list-group-item">
+
+                                    <b>Elanlar:</b> <a class="float-right">@ViewBag.dyr5</a>
+
+                                </li>
+
+                            </ul>
+
+
+
+                            <a href="#" class="btn btn-primary btn-block"><b>Gələn Mesajlar</b></a>
+
+                        </div>
+
+                        <!-- /.card-body -->
+
+                    </div>
+
+                    <!-- /.card -->
+                    <!-- About Me Box -->
+
+                    <div class="card card-primary">
+
+                        <div class="card-header">
+
+                            <h3 class="card-title">Haqqımda</h3>
+
+                        </div>
+
+                        <!-- /.card-header -->
+
+                        <div class="card-body">
+
+                            <strong><i class="fas fa-book mr-1"></i>İstitfadəçi Adı</strong>
+
+
+
+                            <p class="text-muted">
+
+                                @ViewBag.dyr6
+
+                            </p>
+
+
+
+                            <hr>
+
+
+
+                            <strong><i class="fas fa-map-marker-alt mr-1"></i> Təhsil Yeri</strong>
+
+
+
+                            <p class="text-muted">@ViewBag.dyr7</p>
+
+
+
+                            <hr>
+
+
+
+                            <strong><i class="fas fa-pencil-alt mr-1"></i> Telefon</strong>
+
+
+
+                            <p class="text-muted">
+
+                                @ViewBag.dyr8
+
+                            </p>
+
+
+
+
+                            <hr>
+
+
+
+                            <strong><i class="far fa-file-alt mr-1"></i> Mail Adresim</strong>
+
+
+
+                            <p class="text-muted">@ViewBag.dyr9</p>
+
+                        </div>
+
+                        <!-- /.card-body -->
+
+                    </div>
+
+                    <!-- /.card -->
+
+                </div>
+
+                <!-- /.col -->
+
+                <div class="col-md-9">
+
+                    <div class="card">
+
+                        <div class="card-header p-2">
+
+                            <ul class="nav nav-pills">
+
+                                <li class="nav-item"><a class="nav-link active" href="#activity" data-toggle="tab">Elanlar</a></li>
+
+
+
+                                <li class="nav-item"><a class="nav-link" href="#settings" data-toggle="tab">Ayarlar</a></li>
+
+                            </ul>
+
+                        </div><!-- /.card-header -->
+
+                        <div class="card-body">
+
+                            <div class="tab-content">
+
+                                <div class="active tab-pane" id="activity">
+
+                                    @Html.Partial("Partial1")
+
+                                </div>
+
+
+
+                                <div class="tab-pane" id="settings">
+
+                                    @Html.Action("Partial2", "IstifadeciSidebar")
+                                </div>
+
+                                <!-- /.tab-pane -->
+
+                            </div>
+
+                            <!-- /.tab-content -->
+
+                        </div><!-- /.card-body -->
+
+                    </div>
+
+                    <!-- /.nav-tabs-custom -->
+
+                </div>
+
+                <!-- /.col -->
+
+            </div>
+
+            <!-- /.row -->
+
+        </div><!-- /.container-fluid -->
+
+    </section>
+
+    <!-- /.content -->
+    <!-- /.content-wrapper -->
+
+    <footer class="main-footer">
+
+        <div class="float-right d-none d-sm-block">
+
+            <b>Version</b> 3.0.4
+
+        </div>
+
+        <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+
+        reserved.
+
+    </footer>
+
+
+
+    <!-- Control Sidebar -->
+
+    <aside class="control-sidebar control-sidebar-dark">
+
+        <!-- Control sidebar content goes here -->
+
+    </aside>
+
+    <!-- /.control-sidebar -->
+    <!-- ./wrapper -->
+    <!-- jQuery -->
+
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap 4 -->
+
+    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- AdminLTE App -->
+
+    <script src="../../dist/js/adminlte.min.js"></script>
+
+    <!-- AdminLTE for demo purposes -->
+
+    <script src="../../dist/js/demo.js"></script>
+
+</body>
+
+</html>
+
+
+
+

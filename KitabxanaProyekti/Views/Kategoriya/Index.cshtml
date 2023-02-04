@@ -1,0 +1,31 @@
+﻿@using KitabxanaProyekti.Models.Entity
+@model List<Kategoriya_Table>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<h2> Kategoriyalar </h2>
+
+<table class="table table-dark">
+    <tr style="background-color:#232226; color:white;">
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Güncəllə</th>
+        <th>Sil</th>
+
+    </tr>
+    @foreach (var ktgr in Model)
+    {
+        <tr>
+            <td>@ktgr.ID</td>
+            <td>@ktgr.Ad</td>
+            <td><a href="/Kategoriya/KategoriyaGetir/@ktgr.ID" style="background-color:#039418; color:white;" class="btn"><i class="fa fa-pencil"></i> Güncəllə</a></td>
+            <td><a href="/Kategoriya/KategoriyaSil/@ktgr.ID" style="background-color:darkred; color:white;" class="btn"><i class="fa fa-times"></i> Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/Kategoriya/KategoriyaElaveEt/" style="background-color:#0654a9; color:white; margin-top:15px;" class="btn">
+    <i class="fa fa-user-plus"></i> Yeni Kategoriya
+</a>
+

@@ -1,0 +1,46 @@
+﻿@using KitabxanaProyekti.Models.Entity
+@model List<Kitab_Table>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+@using (Html.BeginForm("Index", "Kitab", FormMethod.Post))
+{
+    <div style="margin-top:15px;">@Html.TextArea("p", new { @class = "form-control" }) <input type="submit" class="btn btn-default" style="background-color:#0094ff; color:white; margin-top:5px;" value="Axtar" /> </div>
+
+}
+<br />
+<table class="table table-hover">
+    <tr style="background-color:#232226; color:white;">
+        <td>ID</td>
+        <td>Ad</td>
+        <td>Kategoriya</td>
+        <td>Yazıçı</td>
+        <td>Nəşriyyat</td>
+        <td>Səyfə</td>
+        <td>Tarix</td>
+        <td>Vəziyyət</td>
+        <td>Guncelle</td>
+        <td>Sil</td>
+
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.ID</td>
+            <td>@i.Ad</td>
+            <td>@i.Kategoriya_Table.Ad</td>
+            <td>@i.Yazici_Table.Ad</td>
+            <td>@i.YayinEvi</td>
+            <td>@i.Seyfe</td>
+            <td>@i.NesrTarix</td>
+            <td>@i.Veziyyet</td>
+            <td><a href="/Kitab/KitabGetir/@i.ID" style="background-color:#039418; color:white;" class="btn"><i class="fa fa-pencil"></i> Güncəllə</a></td>
+            <td><a href="/Kitab/KitabSil/@i.ID" style="background-color:darkred; color:white;" class="btn"><i class="fa fa-times"></i> Sil</a></td>
+        </tr>
+    }
+</table>
+<a href="/Kitab/KitabElaveEt/" style="background-color:#0654a9; color:white; margin-top:15px;" class="btn">
+    <i class="fa fa-user-plus"></i> Yeni Kitab
+</a>

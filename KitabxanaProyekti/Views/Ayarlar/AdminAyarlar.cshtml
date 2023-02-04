@@ -1,0 +1,49 @@
+﻿@using KitabxanaProyekti.Models.Entity
+@model List<Admin_Table>
+@{
+    ViewBag.Title = "AdminAyarlar";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<table class="table table-hover" style="margin-top:15px;">
+    <tr>
+        <th>Mail</th>
+        <th>Vəzifə</th>
+        <th>Güncəllə</th>
+        <th>Sil</th>
+    </tr>
+    @foreach (var a in Model)
+    {
+        <tr>
+            <td>@a.Mail</td>
+            <td>@a.Vezife</td>
+            <td><a href="/Ayarlar/AdminGetir/@a.ID" style="background-color:#039418; color:white;" class="btn"><i class="fa fa-pencil"></i> Güncəllə</a></td>
+            <td><a href="/Ayarlar/AdminSil/@a.ID" style="background-color:darkred; color:white;" class="btn"><i class="fa fa-times"></i> Sil</a></td>
+        </tr>
+    }
+
+</table>
+
+<button style="background-color:#0654a9; color:white; margin-top:15px;" class="btn" data-toggle="modal" data-target="#Modal1">
+    <i class="fa fa-user-plus"></i> Yeni Admin
+</button>
+
+<div class="modal" id="Modal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="moda-title">Yeni Admin</h2>
+            </div>
+            <form method="post" action="/Ayarlar/YeniAdmin/">
+                <input type="email" name="Mail" placeholder="E-Mail" class="form-control" style="margin:15px ; width:90%; " />
+                <input type="password" name="Sifre" placeholder="Şifrə" class="form-control" style="margin: 15px; width: 90%;" />
+                <input type="text" name="Vezife" placeholder="Vəzifə" class="form-control" style="margin: 15px; width: 90%;" />
+                <button class="btn" style="background-color:#045ecc; color:white; margin-left:15px;"><i class="fa  fa-plus-circle"></i> Əlavə Et</button>
+            </form>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,24 @@
+﻿@using KitabxanaProyekti.Models.Entity
+@model List<Emeliyyat_Table>
+@{
+    ViewBag.Title = "KitabKecmisi";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<h2>@ViewBag.ist</h2>
+<table style="margin-top:15px;" class="table table-hover">
+    <tr>
+        <th>Kitab Adı</th>
+        <th>Götürülmə Tarixi</th>
+        <th>Qaytarma Tarixi</th>
+    </tr>
+    @foreach (var i in Model)
+            {
+                <tr>
+                    <td>@i.Kitab_Table.Ad</td>
+                    <td>@Convert.ToDateTime(i.GoturulmeTarix).ToString("dd/MM/yyyy")</td>
+                    <td>@Convert.ToDateTime(i.IstifadeciQaytarmaTarix).ToString("dd/MM/yyyy")</td>
+                </tr>
+            }
+</table>
+

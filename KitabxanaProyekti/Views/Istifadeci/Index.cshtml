@@ -1,0 +1,40 @@
+﻿@using KitabxanaProyekti.Models.Entity
+@*@using PagedList
+@using PagedList.Mvc*@
+@*@model  PagedList.IPagedList<Istifadeci_Table>*@
+
+@model List<Istifadeci_Table>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:15px;">
+    <tr style="background-color:#232226; color:white;">
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Mail</th>
+        <th>Təhsil Yeri</th>
+        <th>Güncəllə</th>
+        <th>Sil</th>
+        <th>Kitab Keçmişi</th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+<tr>
+    <td>@i.ID</td>
+    <td>@i.Ad</td>
+    <td>@i.Soyad</td>
+    <td>@i.Mail</td>
+    <td>@i.TehsilYeri</td>
+    <td><a href="/Istifadeci/IstifadeciGetir/@i.ID" style="background-color:#039418; color:white;" class="btn"><i class="fa fa-pencil"></i> Güncəllə</a></td>
+    <td><a href="/Istifadeci/IstifadeciSil/@i.ID" style="background-color:darkred; color:white;" class="btn"><i class="fa fa-times"></i> Sil</a></td>
+
+    <td><a href="/Istifadeci/KitabKecmisi/@i.ID" style="background-color:#0011cb; color:white;" class="btn"><i class="fa fa-book"></i> Sil</a></td>>Kitab Keçmişi</a></td>
+</tr>
+    }
+</table>
+@*@Html.PagedListPager((IPagedList)Model,seyfe => Url.Action("Index",new { seyfe }))*@
+<a href="/Istifadeci/IstifadeciElaveEt/" class="btn btn-info">Yeni</a>

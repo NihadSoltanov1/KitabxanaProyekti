@@ -1,0 +1,35 @@
+﻿@using KitabxanaProyekti.Models.Entity
+@model List<Emeliyyat_Table>
+@{
+    ViewBag.Title = "KitabQaytarKecmisi";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<table class="table table-bordered" style="margin-top:15px">
+    <tr>
+        <th>ID</th>
+        <th>Kitab</th>
+        <th>İstifadəçi</th>
+        <th>İşçi</th>
+        <th>Verilmə Tarixi</th>
+        <th>Qaytarılma Tarixi</th>
+        <th>İstifadəçi Gətirdiyi Tarix</th>
+        <th>Vəziyyət</th>
+        <th>Detal</th>
+    </tr>
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@e.ID</td>
+            <td>@e.Kitab_Table.Ad</td>
+            <td>@e.Istifadeci_Table.Ad&nbsp @e.Istifadeci_Table.Soyad</td>
+            <td>@e.Isci_Table.Isci</td>
+            <td>@Convert.ToDateTime(e.GoturulmeTarix).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(e.QaytarmaTarix).ToString("dd/MM/yyyy")</td>
+            <td>@Convert.ToDateTime(e.IstifadeciQaytarmaTarix).ToString("dd/MM/yyyy")</td>
+            <td>@e.EmeliyyatVeziyyet</td>
+            <td><a href="#" style="background-color: #17bb1f; color: white;" class="btn btn-group">Detallar</a></td>
+        </tr>
+    }
+</table>
+
+

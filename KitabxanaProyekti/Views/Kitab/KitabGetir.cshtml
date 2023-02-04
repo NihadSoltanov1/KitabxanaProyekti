@@ -1,0 +1,24 @@
+﻿@model KitabxanaProyekti.Models.Entity.Kitab_Table
+@{
+    ViewBag.Title = "KitabGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("KitabGuncelle", "Kitab", FormMethod.Post))
+{
+    <label style="margin-top:15px">Ad</label>
+    @Html.TextBoxFor(k => k.Ad, new { @class = "form-control" })
+    <label style="margin-top:15px">Kategoriya</label>
+    @Html.DropDownListFor(k => k.Kategoriya_Table.ID, (List<SelectListItem>)ViewBag.dyr1, new { @class = "form-control" })
+    <label style="margin-top:15px">Yazıçı</label>
+    @Html.DropDownListFor(k => k.Yazici_Table.ID, (List<SelectListItem>)ViewBag.dyr2, new { @class = "form-control" })
+    <label style="margin-top:15px">Nəşr Tarixi</label>
+    @Html.TextBoxFor(k => k.NesrTarix, new { @class = "form-control" })
+    <label style="margin-top:15px">Nəşr Evi</label>
+    @Html.TextBoxFor(k => k.YayinEvi, new { @class = "form-control" })
+    <label style="margin-top:15px">Səyfə</label>
+    @Html.TextBoxFor(k => k.Seyfe, new { @class = "form-control" })
+
+    <div style="margin-top:15px;"> <button class="btn btn-warning">Güncəllə</button> </div>
+}
+

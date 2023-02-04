@@ -1,0 +1,23 @@
+﻿@model KitabxanaProyekti.Models.Entity.Kategoriya_Table
+@{
+    ViewBag.Title = "KategoriyaGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("KategoriyaGuncelle", "Kategoriya", FormMethod.Post))
+{
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(a => a.ID)
+        @Html.TextBoxFor(a => a.ID, new { @class = "form-control" })
+        <br />
+        @Html.LabelFor(b => b.Ad)
+        @Html.TextBoxFor(b => b.Ad, new { @class = "form-control" })
+        @Html.ValidationMessageFor(i => i.Ad, "", new { @style = "color: blue" })
+
+    </div>
+    <div>
+        <button class="btn" style="background-color:#059430; color:white;"><i class="fa  fa-plus-refresh"></i> Güncəllə</button>
+    </div>
+}
+

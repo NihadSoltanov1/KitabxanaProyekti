@@ -1,0 +1,25 @@
+﻿
+@model KitabxanaProyekti.Models.Entity.Yazici_Table
+@{
+    ViewBag.Title = "YaziciGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+@using (Html.BeginForm("YaziciGuncelle", "Yazici", FormMethod.Post))
+{
+    @Html.LabelFor(a => a.ID)
+    @Html.TextBoxFor(a => a.ID, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(a => a.Ad)
+    @Html.TextBoxFor(a => a.Ad, new { @class = "form-control" })
+    <br />
+    @Html.LabelFor(a => a.Soyad)
+    @Html.TextBoxFor(a => a.Soyad, new { @class = "form-control" })
+    <br />
+    <label>Haqqında</label>
+    @Html.TextAreaFor(a => a.Aciqlama, new { @class = "form-control" })
+    <br />
+    <button class="btn" style="background-color:#059430; color:white;"><i class="fa  fa-plus-refresh"></i> Güncəllə</button>
+}
+

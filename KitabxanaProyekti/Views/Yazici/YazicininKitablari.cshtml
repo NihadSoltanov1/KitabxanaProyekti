@@ -1,0 +1,24 @@
+﻿@using KitabxanaProyekti.Models.Entity
+@model List<Kitab_Table>
+@{
+    ViewBag.Title = "YazicininKitablari";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<h2>@ViewBag.yzr</h2>
+<br />
+<table class="table table-hover">
+    <tr style="background-color:#232226; color:white;">
+        <th>ID</th>
+        <th>Ad</th>
+        <th>Kategoriya</th>
+    </tr>
+
+    @foreach (var i in Model)
+    {
+        <tr>
+            <td>@i.ID</td>
+            <td>@i.Ad</td>
+            <td>@i.Kategoriya_Table.Ad</td>
+        </tr>
+    }
+</table>

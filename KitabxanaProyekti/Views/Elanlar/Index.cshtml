@@ -1,0 +1,30 @@
+﻿@using KitabxanaProyekti.Models.Entity
+@model List<Elan_Table>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<table class="table table-bordered" style="margin-top:15px;">
+    <tr>
+        <th>ID</th>
+        <th>Kategoriya</th>
+        <th>Tarix</th>
+        <th>Sil</th>
+        <th>Güncəllə</th>
+        <th>Ətraflı</th>
+    </tr>
+
+    @foreach (var e in Model)
+    {
+        <tr>
+            <td>@e.ID</td>
+            <td>@e.Kategoriya</td>
+            <td>@Convert.ToDateTime(e.Tarix).ToString("dd/MM/yyyy")</td>
+            <td><a href="/Elanlar/ElanSil/@e.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Elanlar/ElanGetir/@e.ID" class="btn btn-success">Güncəllə</a></td>
+            <td><a href="/Elanlar/ElanDetay/@e.ID" class="btn btn-primary">Ətraflı</a></td>
+        </tr>
+    }
+</table>
+<a href="/Elanlar/YeniElan/" class="btn btn-info">Yeni</a>

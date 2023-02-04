@@ -1,0 +1,48 @@
+﻿
+@model KitabxanaProyekti.Models.Entity.Emeliyyat_Table
+@{
+    ViewBag.Title = "KitabQaytarGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("KitabQaytarGuncelle", "KitabVer", FormMethod.Post))
+{
+    <div style="margin-top:15px;"><label>ID</label> </div>
+    @Html.TextBoxFor(e => e.ID, new { @class = "form-control" })
+
+    <div style="margin-top:15px;"><label>Kitab</label> </div>
+    @Html.TextBoxFor(e => e.Kitab, new { @class = "form-control" })
+
+    <div style="margin-top:15px;"><label>İstifadəçi</label> </div>
+    @Html.TextBoxFor(e => e.Istifadeci, new { @class = "form-control" })
+
+    <div style="margin-top:15px;"><label>İşçi</label> </div>
+    @Html.TextBoxFor(e => e.Isci, new { @class = "form-control" })
+
+    <div style="margin-top:15px;"><label>Verilmə Tarixi</label> </div>
+    @Html.TextBoxFor(e => e.GoturulmeTarix, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+
+    <div style="margin-top:15px;"><label>Qaytarma Tarixi</label> </div>
+    @Html.TextBoxFor(e => e.QaytarmaTarix, "{0: dd.MM.yyyy}", new { @class = "form-control" })
+
+    <div style="margin-top:15px;"><label>İstifadəçinin Gətirdiyi Tarix</label> </div>
+    <input type="text" name="IstifadeciQaytarmaTarix" value="@DateTime.Now.ToShortDateString()" class="form-control" />
+
+    <div style="margin-top:15px;"><label>Gecikdirilən Gün</label> </div>
+    if (ViewBag.gun > 0)
+    {
+        <input type="text" name="IstifadeciQaytarmaTarix" value="@ViewBag.gun" class="form-control" />
+    }
+    else
+    {
+        <input type="text" name="IstifadeciQaytarmaTarix" value="0" class="form-control" />
+    }
+
+    <button class="btn btn-group" style="background-color:#17bb1f; color:white; margin-top:15px;">Kitab Qaytar</button>
+
+
+
+}
+
+
+

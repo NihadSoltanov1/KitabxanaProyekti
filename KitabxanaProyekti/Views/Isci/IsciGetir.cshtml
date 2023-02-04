@@ -1,0 +1,16 @@
+﻿@model KitabxanaProyekti.Models.Entity.Isci_Table
+@{
+    ViewBag.Title = "IsciGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("IsciGuncelle", "Isci", FormMethod.Post))
+{
+    <div style="margin-bottom: 5px; margin-top:15px;"><label>ID</label></div>
+    @Html.TextBoxFor(i => i.ID, new { @class = "form-control" })
+    <div style="margin-bottom: 5px; margin-top:15px;"><label>İşçi</label></div>
+    @Html.TextBoxFor(i => i.Isci, new { @class = "form-control" })
+    @Html.ValidationMessageFor(i => i.Isci, "", new { @style = "color:blue" })
+    <button class="btn" style="background-color:#059430; color:white; margin-top:15px;"><i class="fa  fa-plus-refresh"></i> Güncəllə</button>
+}
+
